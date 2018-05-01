@@ -1,0 +1,81 @@
+#!/usr/bin/python3.5
+
+import requests
+import os
+import time
+import argparse
+from pathlib import Path
+
+def create_short_cut():
+    var='''[Desktop Entry]
+Type=Application
+Version=0.01
+Name=NetMonitor
+Exec="/usr/bin/netmonitor"
+Terminal=true
+Categories=Internet;
+Comment=Check Internet Connectivity
+'''
+    
+    x= str(Path.home())
+    print(x)
+    y=str(x)+"/Desktop/netmonitor.desktop"
+    file=open(y,'w')
+    file.write(var)
+    print('done')
+    file.close()
+    os.system("gksudo cp "+y+" /usr/share/applications/ && gksudo chmod +x /usr/share/applications/netmonitor.desktop")
+
+def sound(var):
+    if var==1:
+        dur=.5
+        frequency=400
+        os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (dur, frequency))
+    if var==2:
+        dur=.5
+        frequency=600
+        os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (dur, frequency))
+def results():
+    try:
+        r=requests.get("https://httpstat.us/200",timeout=1)
+        #print(r.status_code)
+        if r.status_code==200:
+            del r
+            return 200
+        else :
+            del r
+            return 400
+    except:
+        #print("400")
+        return 400
+
+def main():
+    parser=argparse.ArgumentParser()
+    parser.add_argument("Desktop",help="Do You want to create a desktop shotcut")
+    var1=parser.parse_args()
+    print ("st")
+    if var1.Desktop=="Desktop":
+        create_short_cut()
+    x=0
+    y=0
+    while True:
+        m=results()
+        if(m==200):
+            x=0
+            y=y+1
+            if (y == 1):
+                var=1
+                sound(var)
+                #print("sss")
+                
+        if (m==400):
+            y=0
+            x=x+1
+            if (x==1):
+                var=2
+                sound(var)
+                #print("yyyyy")
+                
+        time.sleep(2)
+
+main()

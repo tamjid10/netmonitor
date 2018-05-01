@@ -25,3 +25,19 @@ Press Enter<br>
 Then minimize the program to run it in the Background.<br>
 
 From then it will Beep when The net connection is ON and when The net connection is droping. <br>
+
+# Get Shotcut On Desktop
+
+Run This Command to add arguments: <br><br>
+<code>
+<kdb>netmonitor Desktop</kdb>
+</code><br><br>
+Press Enter<br>
+
+# Remove this Program
+
+To run The program Open the terminal and type: <br><br>
+<code>
+<kdb>sudo apt remove netmonitor</kdb>
+</code><br><br>
+Press Enter<br>

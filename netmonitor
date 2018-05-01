@@ -37,7 +37,7 @@ def sound(var):
         os.system('play --no-show-progress --null --channels 1 synth %s sine %f' % (dur, frequency))
 def results():
     try:
-        r=requests.get("https://httpstat.us/200",timeout=1)
+        r=requests.get("https://httpstat.us/200",timeout=2)
         #print(r.status_code)
         if r.status_code==200:
             del r

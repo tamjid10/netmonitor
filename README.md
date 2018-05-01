@@ -20,7 +20,7 @@ Then Press Enter..
 To run The program Open the terminal and type: <br><br>
 <code>
 <kdb>netmonitor</kdb>
-</code><br><br>
+</code><br><br><br>
 Press Enter<br>
 Then minimize the program to run it in the Background.<br>
 

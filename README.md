@@ -11,7 +11,7 @@ Open a Terminal And type these:
 
 <code >
 cd /tmp/ && wget https://github.com/tamjid10/netmonitor/raw/master/netmonitor.deb && gksudo dpkg -i netmonitor.deb 
-</code>
+</code><br><br>
 
 Then Press Enter..
 

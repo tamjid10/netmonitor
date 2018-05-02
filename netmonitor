@@ -3,28 +3,6 @@
 import requests
 import os
 import time
-import argparse
-from pathlib import Path
-
-def create_short_cut():
-    var='''[Desktop Entry]
-Type=Application
-Version=0.01
-Name=NetMonitor
-Exec="/usr/bin/netmonitor"
-Terminal=true
-Categories=Internet;
-Comment=Check Internet Connectivity
-'''
-    
-    x= str(Path.home())
-    print(x)
-    y=str(x)+"/Desktop/netmonitor.desktop"
-    file=open(y,'w')
-    file.write(var)
-    print('done')
-    file.close()
-    os.system("gksudo cp "+y+" /usr/share/applications/ && gksudo chmod +x /usr/share/applications/netmonitor.desktop")
 
 def sound(var):
     if var==1:
@@ -50,12 +28,6 @@ def results():
         return 400
 
 def main():
-    parser=argparse.ArgumentParser()
-    parser.add_argument("Desktop",help="Do You want to create a desktop shotcut")
-    var1=parser.parse_args()
-    print ("st")
-    if var1.Desktop=="Desktop":
-        create_short_cut()
     x=0
     y=0
     while True:

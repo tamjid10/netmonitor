@@ -26,13 +26,6 @@ Then minimize the program to run it in the Background.<br>
 
 From then it will Beep when The net connection is ON and when The net connection is droping. <br>
 
-# Get Shotcut On Desktop
-
-Run This Command to add arguments: <br><br>
-<code>
-<kdb>netmonitor Desktop</kdb>
-</code><br><br>
-Press Enter<br>
 
 # Remove this Program
 
